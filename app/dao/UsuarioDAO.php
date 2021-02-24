@@ -7,7 +7,7 @@ class UsuarioDAO{
 
 
 
-/*
+
     
     //criar usuários
     public function create(Usuario $usuario) {
@@ -29,7 +29,7 @@ class UsuarioDAO{
     }
 
 
-*/
+
 
     //read todos
     public function read() {
