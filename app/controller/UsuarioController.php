@@ -11,43 +11,37 @@ $usuario = new Usuario();
 $usuariodao = new UsuarioDAO();
 
 
-
-
 //pega todos os dados passado por POST
 $d = filter_input_array(INPUT_POST);
-
 
 
 
 //se a operação for gravar entra nessa condição
 if(isset($_POST['cadastrar'])){
 
-    //$usuario->setCpf($d['cpf']);
+    $usuario->setCpf((int)$d['cpf']);
     $usuario->setNome($d['nome']);
     $usuario->setSobrenome($d['sobrenome']);
-    $usuario->setIdade($d['idade']);
+    $usuario->setIdade((int)$d['idade']);
     $usuario->setSexo($d['sexo']);
 
+    var_dump($usuario);
     $usuariodao->create($usuario);
 
     header("Location: ../../");
 } 
 
 
-
-
-
 // se a requisição for editar
 else if(isset($_POST['editar'])){
 
-    
-
     $usuario->setNome($d['nome']);
     $usuario->setSobrenome($d['sobrenome']);
-    $usuario->setIdade($d['idade']);
+    $usuario->setIdade((int)$d['idade']);
     $usuario->setSexo($d['sexo']);
-    $usuario->setCpf($d['cpf']);
+    $usuario->setCpf((int)$d['cpf']);
 
+    var_dump($usuario);
     $usuariodao->update($usuario);
 
     header("Location: ../../");

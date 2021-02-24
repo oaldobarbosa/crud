@@ -122,7 +122,7 @@ $usuariodao = new UsuarioDAO();
                             <td><?= $usuario->getCpf() ?></td>
                             <td><?= $usuario->getNome() ?></td>
                             <td><?= $usuario->getSobrenome() ?></td>
-                            <td><?= $usuario->getIdade() ?></td>
+                            <td><?= var_dump($usuario->getIdade()) ?></td>
                             <td><?= $usuario->getSexo()?></td>
                             
 

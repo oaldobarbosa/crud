@@ -7,8 +7,8 @@ class UsuarioDAO{
 
 
 
-
-
+/*
+    
     //criar usuários
     public function create(Usuario $usuario) {
         try {
@@ -29,7 +29,7 @@ class UsuarioDAO{
     }
 
 
-
+*/
 
     //read todos
     public function read() {
@@ -64,14 +64,7 @@ class UsuarioDAO{
     //alterar dados
     public function update(Usuario $usuario) {
         try {
-            $sql = "UPDATE usuario set
-                
-                  nome=:nome,
-                  sobrenome=:sobrenome,
-                  idade=:idade,
-                  sexo=:sexo                  
-                                                                       
-                  WHERE cpf = :cpf";
+            $sql = "UPDATE usuario setnome=:nome, sobrenome=:sobrenome, idade=:idade, sexo=:sexo WHERE cpf = :cpf";
 
             $p_sql = Conexao::getConexao()->prepare($sql);
 
@@ -83,6 +76,8 @@ class UsuarioDAO{
             $p_sql->bindValue(":cpf", $usuario->getCpf());
 
             return $p_sql->execute();
+
+
 
 
         } catch (Exception $e) {
